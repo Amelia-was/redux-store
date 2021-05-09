@@ -100,7 +100,7 @@ function Detail() {
             {currentProduct.description}
           </p>
 
-          <p>
+          <p className='my-1'>
             <strong>Price:</strong>
             ${currentProduct.price}
             {" "}

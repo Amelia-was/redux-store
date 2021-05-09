@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { pluralize } from "../../utils/helpers"
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from '../../utils/actions';
 import { idbPromise } from "../../utils/helpers";
 import { useSelector, useDispatch } from 'react-redux';
@@ -44,17 +43,21 @@ function ProductItem(item) {
   return (
     <div className="card px-1 py-1">
       <Link to={`/products/${_id}`}>
+        <div className='img-container'>
+
         <img
           alt={name}
           src={`/images/${image}`}
-        />
-        <p>{name}</p>
+          />
+        <p className='hover-detail w-100'>See Details</p>
+        </div>
       </Link>
+      <p>{name} | {quantity} left</p>
+      
       <div>
-        <div>{quantity} {pluralize("item", quantity)} in stock</div>
         <span>${price}</span>
       </div>
-      <button onClick={addToCart}>Add to cart</button>
+      <button className='w-100' onClick={addToCart}>Add to cart</button>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 :root {
-  --primary: #232F3E;
-  --secondary: #F3A847;
-  --tertiary: #B12704;
+  --primary: #122D40;
+  --secondary: #F3CB47;
+  --tertiary: #275C82;
   --light: #fafafa;
   --dark: #272f32;
   --error: rgb(228, 46, 1);
@@ -42,6 +42,8 @@ h6 {
 
 h1 {
   font-size: 2.25rem;
+  text-transform: uppercase;
+  font-style: italic;
 }
 
 h2 {
@@ -58,6 +60,7 @@ h4 {
 
 h5 {
   font-size: 1.25rem;
+  font-weight: lighter;
 }
 
 h6 {
@@ -66,7 +69,8 @@ h6 {
 
 p {
   font-size: 1.1rem;
-  margin-top: 0;
+  font-weight: lighter;
+  margin: 0;
 }
 
 a {
@@ -76,7 +80,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  opacity: 0.8;
 }
 
 header {
@@ -88,14 +92,14 @@ header a {
 }
 
 button {
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-decoration: none;
-  padding: 0.25rem 1rem;
-  border-radius: .5rem;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
   border: none;
   outline: none;
   cursor: pointer;
-  margin: 0 1px;
+  margin: 1px;
   background-color: var(--secondary);
 }
 
@@ -110,6 +114,33 @@ button[disabled] {
 
 img {
   max-width: 100%;
+}
+
+.img-container:hover img {
+  opacity: 0.6;
+}
+
+.img-container {
+  position: relative;
+  padding: 0;
+}
+
+.img-container:hover > .hover-detail {
+  opacity: 100%;
+}
+
+.hover-detail {
+  position: absolute;
+  bottom: 0;
+  z-index: 999;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  opacity: 0;
+  text-align: center;
+  background: var(--primary);
+  margin: 0;
+  color: var(--light);
+  font-size: 0.8rem;
 }
 
 span[role="img"] {
@@ -146,6 +177,10 @@ input:focus {
   flex-wrap: wrap;
 }
 
+.align-center {
+  align-items: center;
+}
+
 .space-between {
   justify-content: space-between;
 }
@@ -157,6 +192,10 @@ input:focus {
 .mx-1 {
   margin-right: var(--spacing-one);
   margin-left: var(--spacing-one);
+}
+
+.mr-1 {
+  margin-right: var(--spacing-one);
 }
 
 .mx-2 {
@@ -194,9 +233,13 @@ input:focus {
   padding-bottom: var(--spacing-two);
 }
 
+.w-100 {
+  width: 100%;
+}
+
 .card {
   width: 25%;
-  text-align: center;
+  text-align: left;
 }
 
 .error-text {
